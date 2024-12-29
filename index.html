@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pintree</title>
+  <title>云界导航 | 发现未知世界</title>
   <meta name="keywords" content="Pintree, Bookmarks, Link Management, Export Bookmarks, Website Bookmarks">
   <meta name="description"
-    content="Pintree is a powerful tool that helps you manage and export your browser bookmarks, converting them into an aesthetically pleasing website that is easy to share and access.">
+    content="一个汇聚网上优质网站网址的导航类网站，从这里开始发现新世界。">
   <meta name="author" content="Pintree">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.pintree.io">
@@ -68,6 +68,89 @@
     }
   }
   </script>
+         <style>
+           /* 弹窗背景 */
+           #modal {
+             position: fixed;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: rgba(0, 0, 0, 0.5);
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             z-index: 1000;
+           }
+       
+           /* 弹窗内容 */
+           #modalContent {
+             background: white;
+             padding: 30px;
+             border-radius: 16px;
+             width: 80%;
+             max-width: 500px;
+             position: relative;
+             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+             max-height: 80vh;
+             overflow-y: auto;
+             color: #374151;
+             line-height: 1.6;
+           }
+       
+          
+           /* 弹窗标题 */
+           #modalContent h2 {
+             font-size: 1.5rem;
+             font-weight: 600;
+             color: #1f2937;
+             margin-bottom: 1.5rem;
+           }
+       
+           /* 段落样式 */
+           #modalContent p {
+             margin-bottom: 1.2rem;
+             line-height: 1.8;
+           }
+       
+           /* 弹窗按钮 (右下角) */
+           .acknowledge-button {
+             position: sticky;
+             bottom: 10px;
+             float: right;
+             background-color: #16A34B;
+             color: white;
+             padding: 10px 20px;
+             border: none;
+             border-radius: 8px;
+             cursor: pointer;
+             font-weight: 600;
+             transition: all 0.3s ease;
+             margin-top: 1.5rem;
+           }
+       
+           .acknowledge-button:hover {
+             background-color: #218838;
+             transform: translateY(-1px);
+           }
+       
+           /* 隐藏类，仅用于弹窗 */
+           #modal.modal-hidden {
+             display: none !important;
+           }
+       
+
+       
+           
+
+       
+           /* 免责声明标题样式 */
+           .disclaimer-title {
+             font-weight: 600;
+             color: #1f2937;
+             margin: 1.5rem 0 1rem 0;
+           }
+         </style>
 </head>
 
 <body class="h-full dark:pintree-bg-gray-900 bg-white">
@@ -206,7 +289,7 @@
             </a>
           </div>
           <div class="mt-8 md:order-1 md:mt-0">
-            <p class="text-center text-xs leading-5 text-gray-500 dark:text-gray-400 flex justify-center items-center">
+            <!-- <p class="text-center text-xs leading-5 text-gray-500 dark:text-gray-400 flex justify-center items-center">
               &copy; <span id="currentYear"></span>&nbsp;Built with
               <a href="https://pintree.io" class="text-green-600 hover:text-green-500 flex items-center ml-1"
                 target="_blank">
@@ -226,7 +309,45 @@
                 </svg>
                 Pintree
               </a>
-            </p>
+			  
+            </p> -->
+			<p class="text-center text-xs leading-5 text-gray-500 dark:text-gray-400 flex justify-center items-center">
+			 网站提示：
+			  <!-- Additional links -->
+			  <a href="javascript:void(0);" onclick="openModal()" style="color:#5b5b5b;"  class="text-green-600 hover:text-green-500 ">免责声明</a>
+			  <a href="https://link3.cc/yunjieku" style="color:#5b5b5b;" class="text-green-600 hover:text-green-500 ml-4">商务合作</a>
+			  <a href="https://dondaohang.maozi.io" style="color:#5b5b5b;" class="text-green-600 hover:text-green-500 ml-4">懂导航</a>
+			  <a href="https://link3.cc/yunjieku" style="color:#5b5b5b;" class="text-green-600 hover:text-green-500 ml-4">云界发布页</a>
+<!-- 			  <a href="https://example4.com" style="color:#5b5b5b;" class="text-green-600 hover:text-green-500 ml-4">小报童导航</a>
+			  <a href="https://example4.com" style="color:#5b5b5b;" class="text-green-600 hover:text-green-500 ml-4">云界博客</a> -->
+			  &nbsp;&nbsp;&nbsp;&nbsp;&copy; <span id="currentYear"></span>&nbsp;Built with&nbsp;
+			  <a href="https://pintree.io" class="text-green-600 hover:text-green-500 flex items-center ml-1" target="_blank">
+			    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block mr-1">
+			      <g clip-path="url(#clip0_421_47774)">
+			        <path d="M4.27777 9.11133H6.6111V12.0002L5.44444 10.8783L4.27777 12.0002V9.11133Z" fill="#FCB11E" />
+			        <path d="M9.05557 5.72222L5.22223 0L1.3889 5.72222H2.68634L0.444458 9.11111H10L7.75813 5.72222H9.05557Z" fill="#2D9C6C" />
+			      </g>
+			      <defs>
+			        <clipPath id="clip0_421_47774">
+			          <rect width="9.55556" height="12" fill="white" transform="translate(0.444458)" />
+			        </clipPath>
+			      </defs>
+			    </svg>
+			    Pintree
+			  </a>
+			</p>
+			<div id="modal" class="modal-hidden">
+			    <div id="modalContent">
+			      <h2>免责声明</h2>
+ <p>1、本站资源来自互联网收集，仅供用于学习和交流，请勿用于商业用途。</p>
+			      <p>2、本站不提供任何文件储存及违规下载，一切资源皆来自于网络收集。</p>
+			      <p>3、如有侵权、不妥之处，请联系QQ：2965964457删除！</p>
+			
+			
+			      
+			      <button onclick="closeModal()" class="acknowledge-button">我已知晓</button>
+			    </div>
+			  </div>
           </div>
         </div>
       </footer>
@@ -234,6 +355,25 @@
   </div>
 
   <script>
+	  // 控制弹窗显示
+	      function openModal() {
+	        document.getElementById('modal').classList.remove('modal-hidden');
+	        document.body.style.overflow = 'hidden'; // 防止背景滚动
+	      }
+	  
+	      // 关闭弹窗
+	      function closeModal() {
+	        document.getElementById('modal').classList.add('modal-hidden');
+	        document.body.style.overflow = ''; // 恢复背景滚动
+	      }
+	  
+	      // 点击弹窗外部区域关闭弹窗
+	      document.getElementById('modal').addEventListener('click', function(e) {
+	        if (e.target === this) {
+	          closeModal();
+	        }
+	      });
+		  
     document.addEventListener('DOMContentLoaded', () => {
       // Variables for sidebar elements
       const openSidebarButton = document.getElementById('open-sidebar-button');
